@@ -1,6 +1,6 @@
 /*
     jsHtmlToPDF.JQuery.js
-    Version 1.1.0 (7/29/2016)
+    Version 1.1.1 (9/8/2016)
     
     Created by Luis Valle
     
@@ -104,9 +104,11 @@
                     var tmpThisProtocol = $(location).attr('protocol');
                     var tmpThisHostName = $(location).attr('hostname');
                     $('#dvEvCrClone img').each(function () {
-                        if (!$(this).attr('src').match('http') && !$(this).attr('src').match('://')) {
-                            $(this).attr('src', tmpThisProtocol + '//' + tmpThisHostName + '/' + $(this).attr('src'));
-                        }                    
+                        if (!$(this).attr('src').match(';base64,')) {
+                            if (!$(this).attr('src').match('http') && !$(this).attr('src').match('://')) {
+                                $(this).attr('src', tmpThisProtocol + '//' + tmpThisHostName + '/' + $(this).attr('src'));
+                            }
+                        }                
                     });
                 }
                 $tElm = null;
@@ -165,9 +167,11 @@
                     var tmpThisProtocol = $(location).attr('protocol');
                     var tmpThisHostName = $(location).attr('hostname');
                     $('#dvEvCrClone img').each(function () {
-                        if (!$(this).attr('src').match('http') && !$(this).attr('src').match('://')) {
-                            $(this).attr('src', tmpThisProtocol + '//' + tmpThisHostName + '/' + $(this).attr('src'));
-                        }                    
+                        if (!$(this).attr('src').match(';base64,')) {
+                            if (!$(this).attr('src').match('http') && !$(this).attr('src').match('://')) {
+                                $(this).attr('src', tmpThisProtocol + '//' + tmpThisHostName + '/' + $(this).attr('src'));
+                            }
+                        }
                     });
                 }
                 $tElm = null;
